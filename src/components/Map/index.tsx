@@ -1,17 +1,17 @@
-import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 
 export interface MapProps {
-  places?: Place[]
+  places?: Place[];
 }
 
 export interface Place {
-  id: string
-  name: string
-  slug: string
+  id: string;
+  name: string;
+  slug: string;
   location: {
-    latitude: number
-    longitude: number
-  }
+    latitude: number;
+    longitude: number;
+  };
 }
 
 export default function Map({ places }: MapProps) {
@@ -28,7 +28,7 @@ export default function Map({ places }: MapProps) {
       />
 
       {places?.map(({ id, name, location }) => {
-        const { latitude, longitude } = location
+        const { latitude, longitude } = location;
 
         return (
           <Marker
@@ -36,8 +36,8 @@ export default function Map({ places }: MapProps) {
             position={[latitude, longitude]}
             title={name}
           />
-        )
+        );
       })}
     </MapContainer>
-  )
+  );
 }
