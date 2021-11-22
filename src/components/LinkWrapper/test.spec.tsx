@@ -1,14 +1,14 @@
-import { screen, render } from '@testing-library/react';
-import LinkWrapper from '.';
+import { screen, render } from '@testing-library/react'
+import LinkWrapper from '.'
 
 describe('<LinkWrapper />', () => {
   it('should render link and children', () => {
-    render(<LinkWrapper href="/my-link">Anything</LinkWrapper>);
+    render(<LinkWrapper href="/my-link">Anything</LinkWrapper>)
 
-    const children = screen.getByRole('link', { name: /anything/i });
-    expect(children).toBeInTheDocument();
-    expect(children).toHaveAttribute('href', '/my-link');
+    const children = screen.getByRole('link', { name: /anything/i })
+    expect(children).toBeInTheDocument()
+    expect(children).toHaveAttribute('href', '/my-link')
 
-    screen.logTestingPlaygroundURL();
-  });
-});
+    screen.logTestingPlaygroundURL()
+  })
+})
