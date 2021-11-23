@@ -3,7 +3,12 @@ import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline'
 import * as S from './styles'
 import LinkWrapper from 'components/LinkWrapper'
 
-export default function AboutTemplate() {
+export type PageTemplateProps = {
+  heading: string;
+  body: string;
+}
+
+export default function PageTemplate({heading, body}:PageTemplateProps) {
   return (
     <S.Content>
       <LinkWrapper href='/'>
@@ -11,14 +16,11 @@ export default function AboutTemplate() {
       </LinkWrapper>
 
       <S.Heading>
-        My Trips
+        {heading}
       </S.Heading>
 
       <S.Body>
-        <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, magnam? Quas doloremque esse deleniti obcaecati ipsum et aut nobis nulla non fugit illo cum, ratione enim consequuntur culpa sapiente! Reprehenderit!
-        </p>
-        
+        <div dangerouslySetInnerHTML={{__html: body}} />
       </S.Body>
     </S.Content>
   )
