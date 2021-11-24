@@ -25,3 +25,25 @@ query getPageBySlug($slug: String!) {
   }
 }
 `
+
+export const GET_PLACES = gql `
+query getPlaces{
+  places {
+    id
+    name
+    slug
+    description {
+      html
+    }
+    gallery {
+      url
+      height
+      width
+    }
+    location {
+      latitude
+      longitude
+    }
+  }
+}
+`
