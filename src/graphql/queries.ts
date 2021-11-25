@@ -56,6 +56,7 @@ query getPlaceBySlug($slug: String!){
     slug
     description {
       html
+      text
     }
     gallery {
       url
