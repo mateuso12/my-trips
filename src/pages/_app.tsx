@@ -1,11 +1,19 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import NextNprogress from 'nextjs-progressbar';
+
 import GlobalStyles from 'styles/global';
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
+      <NextNprogress
+        color="#64dfdf"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={3}
+      />
       <Head>
         <title>My Trips</title>
         <link rel="shortcut icon" href="/img/icon-512.png" />
